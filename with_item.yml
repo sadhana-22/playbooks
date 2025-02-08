@@ -1,10 +1,10 @@
 ---
-- hosts: webservers
+- hosts: webservers   #Ansible to run the playbook on all hosts that are part of the webservers
   become: true
   tasks:
   - name: Create multiple directories
     file: path={{item}} state=directory
-    with_items:
+    with_items:    #execute the same task on multiple items.
     - '/home/vn1'
     - '/home/vn2'
     - '/home/vn3'
